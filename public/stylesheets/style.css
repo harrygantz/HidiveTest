@@ -84,3 +84,7 @@ footer {
     font-size: 1.7em;
   }
 }
+.show {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

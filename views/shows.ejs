@@ -16,11 +16,11 @@
 <!-- END NAVBAR -->
 <!-- GET LIST OF TITLES -->
 <div class="container">
-    <div class="row">
+    <div class="row ">
         <%dashboard.Data.TitleRows.forEach(function (titleRow) { titleRow.Titles.forEach( function (title) { %>
-        <div class="col-sm-3">
-            <img src=<%=title.RokuHDArtUrl%> id="icon">
-            <h4><%=title.Name%></h4>
+        <div class="col-sm-4 show">
+            <h5><%=title.Name%></h5>
+            <img src=<%=title.RokuHDArtUrl%> id="titles">
         </div>
         <%})})%>
     </div>
