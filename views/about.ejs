@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%=title%></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+<%include shared/nav.ejs%>
+<!-- END NAVBAR -->
+
+<!-- START 3 COLUMN IMAGE CONTAINER -->
+<div class="container text-center">
+    <h2>What I'm using</h2>
+    <br>
+    <div class="row">
+        <div class="col-sm-3">
+            <img src="images/nodejs.png" id="icon">
+            <h4>Node.js</h4>
+        </div>
+        <div class="col-sm-3">
+            <img src="images/bootstrap.png" id="icon">
+            <h4>Bootstrap</h4>
+        </div>
+        <div class="col-sm-3">
+            <img src="images/html5.png" id="icon">
+            <h4>HTML5</h4>
+        </div>
+        <div class="col-sm-3">
+            <img src="images/css3.png" id="icon">
+            <h4>CSS3</h4>
+        </div>
+    </div>
+</div> <!-- END 3 COLUMN IMAGE CONTAINER -->
+
+<!-- START 2 COLUMN TEXT/IMAGE CONTAINER -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Hey There,</h4>
+            <p>
+                My name is Harry Gantz, I am a recent graduate of University of
+                Houston. I did a little research into your company and into the
+                role that you are hiring for and decided to take a little extra
+                time to make an interesting and interactive website with the
+                given data. Originally I thought i'd make a simple console app
+                that parsed the JSON and let you organize/sort through it, but
+                I thought it would be much cooler to have a little fake website
+                instead. As you already know this took me longer than expected
+                and I apologize for that. Hopefully it doesn't turn you off
+                from the idea of hiring me.
+
+            </p>
+            <p>
+                As far as the tech stack is concerned I went with what you see
+                above because it was the quickest for rapid implementation. I
+                was going to use ASP.NET MVC 5, but after a few hours I decided
+                to swap to the current technologies. I am still pretty new to
+                web development in general so please go easy on me. I am sure
+                there are many mistakes to be found, but I am a quick study
+                and a hard worker so i'll be quick to fix anything you ask.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <img src="images/bronco.png" class="img-responsive">
+        </div>
+    </div>
+</div><!-- END 2 COLUMN TEXT/IMAGE CONTAINER -->
+
+<!-- START 4 COLUMN TEXT/IMAGE CONTAINER -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <h4>Past Projects</h4>
+            <p>
+                One of my favorite projects I have worked on was a game called Battle
+                Broncos. It was created in Unity and is a fully featured fighting game
+                in the vein of Smash Bros. Well at least it started that way, but as
+                you know projects evolve. As a matter of fact it is continuing to
+                evolve in my free time. I hope to one day release it on PC, XboxOne,
+                and Switch one day.
+            </p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <img src="images/bronco.png" class="img-responsive">
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <h4>Mobile</h4>
+            <p>
+                On thing I feel is necessary to have in a developer's tool-belt is
+                experience working on mobile platforms. Unfortunately I didn't get
+                a lot of time to devote on mobile while in school so I am taking
+                it upon myself to learn as much as I can about development on
+                mobile platforms. This site is responsive thanks to bootstrap
+                because I had mobile in mind when I made it.
+            </p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <img src="images/mobile.png" class="img-responsive">
+        </div>
+    </div>
+</div><!-- END 4 COLUMN TEXT/IMAGE CONTAINER -->
+
+<!-- START HIDDEN CONTAINER -->
+<div class="container">
+    <div class="row">
+        <h4><a href="#hidden" data-toggle="collapse">Care to learn more about Battle Broncos?</a></h4>
+        <div id="hidden" class="collapse">
+            <h4>Glad to hear it...</h4>
+            <p>
+                In Battle Broncos transcend mankind in glorious equestrian combat as
+                you fight to claim your stable as the bronco-supreme. With dozens of
+                weapons and abilities you will decimate the foes you face and sunder
+                the stages on which they stand. Joust with other players across a wide
+                variety of stages and game modes or begin your venture towards the
+                divine in the single player campaign. Be careful though: pride comes
+                before fall. The more that you win, the more the odds are stacked
+                against you. Be the best and herald the end of man, or fall into line
+                behind the strong.
+            </p>
+            <p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/3SPr9Hm6cWs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </p>
+        </div>
+    </div>
+</div><!-- END HIDDEN CONTAINER -->
+<%include shared/footer.ejs%>
+<!-- END FOOTER-->
+</div>
+</body>
+</html>
