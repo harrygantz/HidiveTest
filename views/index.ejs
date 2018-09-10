@@ -142,30 +142,71 @@
  <%include shared/nav.ejs%>
  <!-- END NAVBAR -->
 
+ <!-- TITLE MANIPULATION -->
+ <%
+ //Get list of titles
+var titles = [];
+ dashboard.Data.TitleRows.forEach(function (titleRow) {
+   titleRow.Titles.forEach( function (title) {
+     titles.push(title);
+   })
+ })
+
+ titles.sort(function(a, b) {
+   a.OverallRating - b.OverallRating;
+ })
+
+ var titlesByRating = titles.sort(function(a, b) {
+   a.OverallRating - b.OverallRating;
+ })
+
+ function removeDuplicates( arr, prop ) {
+   var obj = {};
+   for ( var i = 0, len = arr.length; i < len; i++ ){
+     if(!obj[arr[i][prop]]) obj[arr[i][prop]] = arr[i];
+   }
+   var newArr = [];
+   for ( var key in obj ) newArr.push(obj[key]);
+   return newArr;
+ }
+
+ titlesByRating = removeDuplicates(titlesByRating, 'Id');
+ %>
+ <!--END TITLE MANIPULATION -->
+
 <!-- START CAROUSEL -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
   </ol>
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="images/LHZ_01_KEY_1200x450.jpg">
+      <h2 class="stuff">Hire Harry!</h2>
+      <img class="bigImg" src=<%=titlesByRating[0].KeyArtUrl%>>
       <div class="carousel-caption align-top">
-        <h1>You should hire harry</h1>
+        <h1>Your peers rated this <%=titlesByRating[0].OverallRating%>/5 stars!</h1>
       </div>
     </div><!-- END ACTIVE -->
     <div class="item">
-      <img src="images/BTB_MOVIE1_KEY_1200x450.jpg">
+      <img class="bigImg" src=<%=titlesByRating[1].KeyArtUrl%>>
       <div class="carousel-caption">
-        <h1>harry is a hard worker</h1>
+        <h1>Your peers rated this <%=titlesByRating[1].OverallRating%>/5 stars!</h1>
       </div>
     </div>
     <div class="item">
-      <img src="images/DVL_01_KEY_1200x450.jpg">
+      <img class="bigImg" src=<%=titlesByRating[2].KeyArtUrl%>>
       <div class="carousel-caption">
-        <h1>totally hire him</h1>
+        <h1>Your peers rated this <%=titlesByRating[2].OverallRating%>/5 stars!</h1>
+      </div>
+    </div>
+    <div class="item">
+      <img class="bigImg" src=<%=titlesByRating[3].KeyArtUrl%>>
+      <div class="carousel-caption">
+        <h1>Your peers rated this <%=titlesByRating[3].OverallRating%>/5 stars!</h1>
       </div>
     </div>
   </div><!-- END CAROUSEL -->

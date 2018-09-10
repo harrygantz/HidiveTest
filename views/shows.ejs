@@ -14,19 +14,52 @@
 <body>
 <%include shared/nav.ejs%>
 <!-- END NAVBAR -->
-<!-- GET LIST OF TITLES -->
+
+
+<!-- TITLE MANIPULATION -->
+<%
+    //Get list of titles
+
+    dashboard.Data.TitleRows.forEach(function (titleRow) {
+       titleRow.Titles.forEach( function (title) {
+        titles.push(title);
+        })
+    })
+
+    titles.sort(function(a, b) {
+        a.Id - b.Id;
+    })
+
+
+    function removeDuplicates( arr, prop ) {
+        var obj = {};
+        for ( var i = 0, len = arr.length; i < len; i++ ){
+            if(!obj[arr[i][prop]]) obj[arr[i][prop]] = arr[i];
+        }
+        var newArr = [];
+        for ( var key in obj ) newArr.push(obj[key]);
+        return newArr;
+    }
+
+    titles = removeDuplicates(titles, 'Id');
+%>
+<!--END TITLE MANIPULATION -->
+
 <div class="container">
     <div class="row ">
-        <%dashboard.Data.TitleRows.forEach(function (titleRow) { titleRow.Titles.forEach( function (title) { %>
+        <h1>Alphabetical List of Shows</h1>
+        <%for (var i = 0; i < titles.length; i ++) {%>
         <div class="col-sm-4 show">
-            <h5><%=title.Name%></h5>
-            <img src=<%=title.RokuHDArtUrl%> id="titles">
+            <div class="container" id="lilvids">
+            <h5 id="titles"><%=titles[i].Name%></h5>
+            <img src=<%=titles[i].RokuHDArtUrl%> >
+            </div>
         </div>
-        <%})})%>
+        <%}%>
     </div>
 </div>
+
 <%include shared/footer.ejs%>
 <!-- END FOOTER-->
-</div>
 </body>
 </html>

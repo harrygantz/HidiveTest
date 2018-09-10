@@ -26,6 +26,13 @@
   transform: translateY(-50%);
   text-transform: uppercase;
 }
+.bigImg {
+  width: 200%;
+}
+.stuff {
+  position: absolute;
+  color: white;
+}
 .btn {
   font-size: 18px;
   color: #FFFFFF;
@@ -90,4 +97,13 @@ footer {
 }
 .smallify {
   max-width: 50%;
+}
+#titles {
+  padding-left: 0px;
+  padding-right: 0px;
+  word-wrap: break-word;
+}
+#lilvids {
+
+  margin-bottom: 10px;
 }
